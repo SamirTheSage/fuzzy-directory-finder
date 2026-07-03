@@ -2,7 +2,7 @@
 
 Fuzzy directory finder for zsh. Save directories, jump to them fast.
 
-https://github.com/snavani/fdf/blob/main/demo.mp4
+![demo](demo.gif)
 
 ## Requirements
 
