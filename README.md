@@ -24,4 +24,4 @@ fdf add       # save current directory
 fdf remove    # remove current directory from saved list
 ```
 
-Saved directories are stored in `~/.fdf_dirs`. Override with `$FDF_STORE`.
+Saved directories are stored in `~/.local/share/fdf/dirs`.

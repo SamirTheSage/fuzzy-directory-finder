@@ -7,8 +7,16 @@
 #   fdf remove   — fuzzy search saved dirs and remove selection
 
 fdf() {
-  local store="${FDF_STORE:-$HOME/.fdf_dirs}"
+  local store="$HOME/.local/share/fdf/dirs"
   local cmd="${1:-}"
+
+  mkdir -p "${store:h}"
+
+  # One-time migration from the old ~/.fdf_dirs location.
+  if [[ ! -e "$store" && -e "$HOME/.fdf_dirs" ]]; then
+    mv "$HOME/.fdf_dirs" "$store"
+    echo "fdf: migrated saved directories from ~/.fdf_dirs to $store"
+  fi
 
   case "$cmd" in
     add)
