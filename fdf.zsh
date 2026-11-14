@@ -39,7 +39,6 @@ fdf() {
       local fzf_height=40
       local top_margin=$(( (lines - fzf_height * lines / 100) / 2 ))
       [[ $top_margin -lt 1 ]] && top_margin=1
-      tput clear
       selection=$(cat "$store" | fzf \
         --height=${fzf_height}% \
         --margin="${top_margin},10,0,10" \
